@@ -3,7 +3,7 @@
     class="flex justify-center items-center h-screen w-screen bg-gradient-to-r from-gray-700/75 to-blue-500/50 overflow-hidden"
   >
   <Model :opened="modalOpened" @closed="modalOpened = false" todo="第一筆資料">
-    <PostCreator />
+    <PostCreator @click="Postadd()"/>
   </Model>
     <div class="h-auto w-96 border-2 rounded-lg bg-gray-200/40">
       <p class="flex text-xl m-5 font-bold">Vue Todolist</p>
@@ -37,6 +37,7 @@
       <label class="m-4 p-2 bg-white rounded-full flex items-center" v-for="(todo, del) in students" :key="del">
         <div class="mx-1 rounded-xl">
           <span>{{todo.name}}</span>
+          <span>{{todo.postData}}</span>
         </div>
         <span class="ml-auto mr-1" @click="delIndex(del)">
         <svg
@@ -84,10 +85,10 @@ export default {
           this.students.splice(del, 1)
         },
 
-        // Postadd(){
-        //   this.todo.push()
-        //   this.modalOpened = false
-        // }
+        Postadd(postData){
+          this.todo.push(postData)
+          this.modalOpened = false
+        }
        
   },
   

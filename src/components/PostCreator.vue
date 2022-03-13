@@ -6,7 +6,7 @@
     <div class="px-3">
       <textarea
         placeholder="輸入記事"
-        class="resize-none w-full h-[250px]"
+        class="resize-none w-full h-[300px]"
         v-model="content"
       ></textarea>
     </div>
